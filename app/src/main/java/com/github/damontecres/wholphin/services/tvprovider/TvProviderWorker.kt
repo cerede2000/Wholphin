@@ -202,7 +202,8 @@ class TvProviderWorker
                         dto.userData
                             ?.lastPlayedDate
                             ?.atZone(ZoneId.systemDefault())
-                            ?.toEpochSecond()
+                            ?.toInstant()
+                            ?.toEpochMilli()
                             ?: Date().time, // TODO
                     )
 
